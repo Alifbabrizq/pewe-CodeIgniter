@@ -6,8 +6,9 @@ class Project extends CI_Controller {
 
     public function index()
     {
+        // $data['header'] = 'theme/header.php';
 		$data['content_view'] = 'customer/dashboard_customer.php';
-		$data['footer'] = 'theme/footer.php';
+		// $data['sidebar'] = 'theme/sidebar.php';
         $this->load->view('theme/sidebar.php',$data);
     }
 
@@ -15,9 +16,10 @@ class Project extends CI_Controller {
     //ADD DATA
     public function store()
     {
-        $data['header'] = 'theme/header.php';
+        // $data['header'] = 'theme/header.php';
         $data['content_view'] = 'customer/myproject_customer.php';
-		$data['footer'] = 'theme/footer.php';
+        // $data['footer'] = 'theme/footer.php';
+        // $data['sidebar'] = 'theme/sidebar.php';
         // $data = [
         //     'id_costumer' => $this->input->post('id_costumer'),
         //     'nama_project' => $this->input->post('nama_project'),
