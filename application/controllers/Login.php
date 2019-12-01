@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('Login_view');
+        $this->load->view('all/Login_view.php');
     }
 
     public function login()
