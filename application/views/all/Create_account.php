@@ -158,14 +158,14 @@
     <img class="gambar" src="<?php echo base_url();?>assets/img/client.png" alt="">
     <h2 class="tulis1">Client</h2>
     <p class="tulis2">Temukan Arsitekmu dengan Daftar sebagai Client</p>
-    <a class="button" href="<?php echo base_url();?>index.php/Welcome/register_customer">Daftar Client</a>
+    <a class="button" href="<?php echo base_url();?>index.php/Login/register_c">Daftar Client</a>
 </div>
 
 <div class="worker">
 <h2 class="tulis1">Arsitek</h2>
 <img class="gambar" src="<?php echo base_url();?>assets/img/arsitek.png" alt="">
-    <p class="tulis2">Temukan Project dengan Daftar sebagai Client</p>
-    <a class="button" href="<?php echo base_url();?>index.php/Welcome/register_worker">Daftar Worker</a>
+    <p class="tulis2">Temukan Project dengan Daftar sebagai Worker</p>
+    <a class="button" href="<?php echo base_url();?>index.php/Login/register_worker">Daftar Worker</a>
 </div>
 
 

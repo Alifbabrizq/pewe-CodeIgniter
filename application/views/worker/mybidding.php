@@ -54,18 +54,12 @@
 
 	<div class="content">
 
-  <?php foreach ($project as $p ) : ?>
-
+		<?php foreach ($project as $p) : ?>
 		<div class="thumbnail">
 			<img src="http://via.placeholder.com/250x150">
-			<h2><?= $p->nama_project ?></h2>
-			<p style="white-space: nowrap; width: 90%; overflow: hidden; text-overflow: ellipsis;"><b>Des :</b> <?= $p->deskripsi ?></p>
-      <p style="white-space: nowrap; width: 90%; overflow: hidden; text-overflow: ellipsis; margin-top:-20px"><b>Budget : </b> Rp.<?= $p->budget ?>,-</p>
-      <a href="" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i> Detail</a>
-      <a href="<?php echo base_url(); ?>index.php/Project_bid/store/<?=$p->id_project?>" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-shopping-cart"></i>Place Bid</a>
-      <!-- <button type="submit" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-shopping-cart"></i> Place Bid</button> -->
+			<h2>Product 1</h2>
+			<p>Rp 200.000</p>
 		</div>
-    <?php endforeach; ?>
-
+		<?php endforeach; ?>
 	</div>
 </div>

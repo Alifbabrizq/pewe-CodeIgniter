@@ -10,7 +10,7 @@
     <table>
         <tr>
             <th>No</th>
-            <th>Customer</th>
+            <th>Worker</th>
             <th>Status Project</th>
             <th>Nama Project</th>
         </tr>

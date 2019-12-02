@@ -37,4 +37,46 @@ class Login_model extends CI_Model {
 
 	
 
+	public function create_customer()
+	{
+		$data = array(
+			'nama_costumer'		=> $this->input->post('nama_costumer'),
+			'alamat_costumer'	=> $this->input->post('alamat_costumer'),
+			'no_tlp'			=> $this->input->post('no_tlp'),
+			'email'				=> $this->input->post('email'),
+			'username'			=> $this->input->post('username'),
+			'password'			=> $this->input->post('password'),
+			'no_rek'			=> $this->input->post('no_rek')
+		);
+		$this->db->insert('costumer', $data);
+
+		if($this->db->affected_rows() > 0){
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+
+	public function create_worker($portofolio)
+	{
+		$data = array(
+			'nama_worker'		=> $this->input->post('nama_worker'),
+			'alamat_worker'		=> $this->input->post('alamat_worker'),
+			'no_tlp'			=> $this->input->post('no_tlp'),
+			'email'				=> $this->input->post('email'),
+			'username'			=> $this->input->post('username'),
+			'password'			=> $this->input->post('password'),
+			'no_rek'			=> $this->input->post('no_rek'),
+			'portofolio'		=> $portofolio['file_name']
+		);
+		$this->db->insert('worker', $data);
+
+		if($this->db->affected_rows() > 0){
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
 }
