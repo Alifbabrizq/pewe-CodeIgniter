@@ -32,12 +32,18 @@
 								<td style="white-space: nowrap; width: 10px; overflow: hidden; text-overflow: ellipsis;"><?= $d->deskripsi ?></td>
 								<td><?= $d->batas_pengerjaan ?></td>
 								<td><?= $d->budget ?></td>
-								<td><?= $d->status ?></td>
+								<?php if ($d->id_status == 0) : ?>
+									<td>PUBLISHED</td>
+									<?php elseif($d->id_status == 1) : ?>
+									<td>ON PROGRESS</td>
+									<?php elseif($d->id_status == 2) : ?>
+									<td>REVISI</td>
+									<?php else: ?>
+									<td>DONE</td>
+								<?php endif; ?>
 								<td>
-									<a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ubah"
-										onclick="prepare_ubah_produk(<?= $d->id_project ?>)">Ubah</a>
-									<a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_hapus"
-										onclick="prepare_hapus_produk(<?= $d->id_project ?>)">hapus</a>
+									<a href="<?= base_url('index.php/project/show/') . $d->id_project ?>" class="btn btn-info btn-sm">Ubah</a>
+									<a href="<?= base_url('index.php/project/delete/') . $d->id_project ?>" class="btn btn-danger btn-sm" >hapus</a>
 								</td>
 							</tr>
 							<?php $no++; ?>

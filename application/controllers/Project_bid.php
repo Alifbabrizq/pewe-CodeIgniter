@@ -13,7 +13,7 @@ class Project_bid extends CI_Controller {
                         ->join('worker', 'project_bid.id_worker = worker.id_worker')
                         ->join('project', 'project_bid.id_project = project.id_project')
                         ->join('costumer', 'project.id_costumer = costumer.id_costumer')
-                        ->where('project_bid.status', 1)
+                        ->where('project_bid.id_status', 1)
                         ->get()->result();
         } else if($_SESSION['level'] == 3) {
             $data['content_view']='customer/daftar_bidding.php';
@@ -42,7 +42,9 @@ class Project_bid extends CI_Controller {
     
             $this->db->insert('project_bid', $data);
         }
-        $this->load->view('theme/sidebar.php', $data);
+        
+        redirect('project_bid','refresh');
+        
 
     }
 
@@ -50,9 +52,10 @@ class Project_bid extends CI_Controller {
     {
         $this->db->where('id_project', $id);
         $this->db->update('project_bid', [
-            'status' => 1
+            'id_status' => 1
         ]);
         
+        redirect('project_bid','refresh');
     }
 
 

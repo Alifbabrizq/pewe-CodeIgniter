@@ -49,15 +49,42 @@ class Project extends CI_Controller {
         $data['footer'] = 'theme/footer.php';
         $data['sidebar'] = 'theme/sidebar.php';
         $data = [
-            // 'id_costumer' => $this->input->post('id_costumer'),
+            'id_costumer' => $_SESSION['id_costumer'],
             'nama_project' => $this->input->post('nama_project'),
             'deskripsi' => $this->input->post('deskripsi'),
             'batas_pengerjaan' => $this->input->post('batas_pengerjaan'),
             'budget' => $this->input->post('budget'),
-            // 'status' => $this->input->post('status',1)
+            'id_status' => 0
         ];
         $this->db->insert('project', $data);
-        $this->load->view('theme/sidebar.php',$data);
+        redirect('project/myproject','refresh');
+    }
+
+    public function show($id)
+    {
+        $data['data'] = $this->db->get_where('project', ['id_project' => $id])->result_array();
+        $this->load->view('update_project', $data);
+    }
+
+    public function update()
+    {
+        $this->db->where('id_project', $this->input->post('id_project'));
+        $data = [
+            'nama_project' => $this->input->post('nama_project'),
+            'deskripsi' => $this->input->post('deskripsi'),
+            'batas_pengerjaan' => $this->input->post('batas_pengerjaan'),
+            'budget' => $this->input->post('budget'),
+            'id_status' => $this->input->post('id_status')
+        ];
+        $this->db->update('project', $data);
+        
+        redirect('project/myproject','refresh');
+    }
+
+    public function delete($id)
+    {
+        $this->db->delete('project', ['id_project' => $id]);
+        redirect('project/myproject','refresh');
     }
 
 }
