@@ -393,7 +393,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link " href="<?php echo base_url();?>assets/examples/profile.html">
+						<a class="nav-link " href="<?php echo base_url();?>index.php/Project_bid">
 							<i class="ni ni-single-02 text-yellow"></i> My Customer
 						</a>
 					</li>

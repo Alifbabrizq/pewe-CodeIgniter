@@ -20,6 +20,7 @@
 								<th scope="col">Deadline</th>
 								<th scope="col">Budget</th>
 								<th scope="col">Status</th>
+								<th scope="col">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -28,10 +29,16 @@
 							<tr>
 								<td><?= $no ?></td>
 								<td><?= $d->nama_project ?></td>
-								<td><?= $d->deskripsi ?></td>
+								<td style="white-space: nowrap; width: 10px; overflow: hidden; text-overflow: ellipsis;"><?= $d->deskripsi ?></td>
 								<td><?= $d->batas_pengerjaan ?></td>
 								<td><?= $d->budget ?></td>
 								<td><?= $d->status ?></td>
+								<td>
+									<a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_ubah"
+										onclick="prepare_ubah_produk(<?= $d->id_project ?>)">Ubah</a>
+									<a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_hapus"
+										onclick="prepare_hapus_produk(<?= $d->id_project ?>)">hapus</a>
+								</td>
 							</tr>
 							<?php $no++; ?>
 							<?php endforeach; ?>

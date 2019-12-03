@@ -58,7 +58,7 @@
 		<div class="thumbnail">
 			<img src="http://via.placeholder.com/250x150">
 			<h2><?=$p->nama_worker ?></h2>
-			<p>Rp 200.000</p>
+			<p><?=$p->harga ?></p>
 			<?php if ($_SESSION['level'] == 3) : ?>
 				<button class="btn btn-success" onclick="window.location.href='<?= base_url('index.php/project_bid/konfirmasi/') . $p->id_bid ?>'">KONFIRM</button>
 			<?php endif; ?>

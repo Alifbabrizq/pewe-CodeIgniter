@@ -1,24 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Customer</th>
-            <th>Status Project</th>
-            <th>Nama Project</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</body>
-</html>
+<style>
+	.content {
+		min-height: 500px;
+		overflow: auto;
+	}
+
+	.footer {
+		background-color: #ccc;
+		min-height: 50px;
+	}
+
+	.header {
+		background-color: #eee;
+		min-height: 50px;
+		text-align: center;
+	}
+
+	.logo img {
+		width: 200px;
+	}
+
+	.menu ul {
+		padding: 0;
+	}
+
+	.menu ul li {
+		display: inline-block;
+	}
+
+	.menu ul li a {
+		padding: 10px 20px;
+		text-decoration: none;
+	}
+
+	.thumbnail {
+		background-color: white;
+		text-align: center;
+		padding: 10px;
+		width: 225px;
+		margin: 10px;
+		float: left;
+	}
+
+	.thumbnail img {
+		width: 100%;
+	}
+
+</style>
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+
+</div>
+<div style="position:absolute;" class="container-fluid mt--7">
+
+
+	<div class="content">
+
+<?php foreach ($project as $p) : ?>
+		<div class="thumbnail">
+			<img src="http://via.placeholder.com/250x150">
+			<h2><?=$p->nama_costumer ?></h2>
+            <p><?=$p->nama_project ?></p>
+			<p><?=$p->harga ?></p>
+		</div>
+<?php endforeach; ?>
+	</div>
+</div>
